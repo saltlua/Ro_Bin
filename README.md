@@ -19,7 +19,7 @@ All three report through one manager, so you can see every resource your game ho
 | Pool | Use it for |
 |---|---|
 | `InstancePool` | Parts, models, rigs and VFX. Parks unused objects off-screen, moves them back in batches with `BulkMoveTo`, and keeps every part's offset exact. |
-| `Pool` | Any Luau object with your own `Factory`. |
+| `Pool` | Any Luau value (tables, class objects, anything). You pass a `Factory` function that builds a new one when the pool runs out. |
 | `TablePool` | Reusable scratch tables. |
 | `BufferPool` | `buffer`s bucketed by size. |
 
@@ -111,4 +111,4 @@ Timings cover Luau-side work only, not replication or rendering. Expect about ±
 3. `require(game.ReplicatedStorage.Ro_Bin)`
 
 ## Thanks
-Ro_Bin borrows coding habits from **ByteNet** and **Flux**. The benchmarks compare against **ObjectCache** by Pyseph and **LRUCache** by Quenty (both MIT). Thanks to their authors.
+The benchmarks compare against **ObjectCache** by Pyseph and **LRUCache** by Quenty (both MIT). Thanks to their authors.
